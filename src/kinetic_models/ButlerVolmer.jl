@@ -29,3 +29,12 @@ function rate_constant(V_app, bv::ButlerVolmer, ::Val{false}; T = 298)
     exp_arg = -((1 .- bv.α) .* V_app) / (kB * T)
     bv.A .* exp.(exp_arg)
 end
+# function rate_constant(V_app, bv::ButlerVolmer, ::Val{true}; T = 298)
+#     exp_arg = (bv.α .* V_app) / (kB * T)
+#     -bv.A .* exp.(exp_arg)
+# end
+
+# function rate_constant(V_app, bv::ButlerVolmer, ::Val{false}; T = 298)
+#     exp_arg = ((1 .- bv.α) .* V_app) / (kB * T)
+#     bv.A .* exp.(exp_arg)
+# end
